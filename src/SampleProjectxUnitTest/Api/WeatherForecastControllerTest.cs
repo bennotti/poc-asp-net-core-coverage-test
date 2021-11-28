@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Newtonsoft.Json;
+using SampleProject.Api;
 using SampleProject.Core.BusinessRules.Interfaces;
 using SampleProjectLib;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -28,10 +32,13 @@ namespace SampleProjectxUnitTest
 
             // Act
             var response = await _client.SendAsync(request);
+            string content = await response.Content.ReadAsStringAsync();
+            var dataResponse = JsonConvert.DeserializeObject<IEnumerable<WeatherForecast>>(content);
 
             // Assert
             response.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.True(dataResponse.Any());
         }
     }
 }

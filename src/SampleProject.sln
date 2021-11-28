@@ -12,7 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\Readme.md = ..\Readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.Api", "SampleProject.Api\SampleProject.Api.csproj", "{780CD063-F134-453F-8EDA-FAEFE51B3005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleProject.Api", "SampleProject.Api\SampleProject.Api.csproj", "{780CD063-F134-453F-8EDA-FAEFE51B3005}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{91476375-2815-48DE-92E6-FAF4FA293CCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E7A4F9C9-06C5-4320-97F9-929CC763F6FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9FEB0C3-940E-4D07-AFF7-8797262D154A} = {91476375-2815-48DE-92E6-FAF4FA293CCA}
+		{8C17CCDC-88BD-4F3E-88BC-2A7122900EFE} = {E7A4F9C9-06C5-4320-97F9-929CC763F6FB}
+		{780CD063-F134-453F-8EDA-FAEFE51B3005} = {91476375-2815-48DE-92E6-FAF4FA293CCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB35CE10-1174-48A2-9A1F-57F7A75345A6}
