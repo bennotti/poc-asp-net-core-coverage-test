@@ -6,6 +6,7 @@ using SampleProject.Core.InternalServices.Interfaces;
 using SampleProject.Infra.BusinessRules;
 using SampleProject.Infra.InternalServices;
 using SampleProject.Infrastructure.Repository;
+using SampleProjectxUnitTest.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +33,7 @@ namespace SampleProjectxUnitTest
 
         public void ConfigureServices(IServiceCollection services, HostBuilderContext hostBuilderContext)
         {
-            services.AddDbContext<DatabaseContext>(options =>
+            services.AddDbContext<DatabaseContextMock>(options =>
             {
                 options.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString());
             });
