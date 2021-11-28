@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SampleProject.Core.BusinessRules.Interfaces;
 using SampleProject.Core.InternalServices.Interfaces;
 using SampleProject.Infra.BusinessRules;
 using SampleProject.Infra.InternalServices;
+using SampleProject.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,6 +32,11 @@ namespace SampleProjectxUnitTest
 
         public void ConfigureServices(IServiceCollection services, HostBuilderContext hostBuilderContext)
         {
+            services.AddDbContext<DatabaseContext>(options =>
+            {
+                options.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString());
+            });
+
             services.AddTransient<IGreeterService, GreeterService>();
             services.AddTransient<IGreeterBusinessRule, GreeterBusinessRule>();
         }

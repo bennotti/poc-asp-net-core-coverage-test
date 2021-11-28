@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Repository\Entity\" />
     <Folder Include="Domain\Repository\Interfaces\" />
     <Folder Include="Domain\ViewModels\" />
-    <Folder Include="Infrastructure\Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.21" />
   </ItemGroup>
 
 </Project>
