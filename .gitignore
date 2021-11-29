@@ -23,3 +23,6 @@ src/SampleProjectLib/obj/
 src/SampleProjectxUnitTest/bin/
 src/SampleProjectxUnitTest/obj/
 src/SampleProject/.vs/
+src/.sonarqube/
+src/SampleProjectxUnitTest/TestResults/
+src/SonarTestResult/

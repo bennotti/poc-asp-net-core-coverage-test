@@ -19,6 +19,7 @@ namespace SampleProject.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<Random>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

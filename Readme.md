@@ -21,3 +21,9 @@
 ```
 dotnet tool install --global dotnet-reportgenerator-globaltool
 ```
+
+### sonar
+
+- [Sonar C#](https://docs.sonarqube.org/latest/analysis/languages/csharp/)
+- dotnet tool install --global dotnet-sonarscanner
+- powershell: .\run-sonar-report.ps1

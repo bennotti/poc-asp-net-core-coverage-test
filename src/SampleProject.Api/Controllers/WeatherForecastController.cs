@@ -17,21 +17,23 @@ namespace SampleProject.Api.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly Random _random;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(Random random, ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            _random = random;
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var rng = new Random();
+            _logger.LogInformation("Obtendo WeatherForecast");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                TemperatureC = _random.Next(-20, 55),
+                Summary = Summaries[_random.Next(Summaries.Length)]
             })
             .ToArray();
         }
