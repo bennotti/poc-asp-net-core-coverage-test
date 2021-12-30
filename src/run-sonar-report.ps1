@@ -7,6 +7,7 @@ if ($sonarHost -eq $null) {
 }
 
 dotnet sonarscanner begin /k:"poc-asp-net-core-coverage-test" `
+	/o:"Estudos" `
 	/d:sonar.host.url="http://"$sonarHost":9000/" `
 	/d:sonar.scm.disabled=true `
 	/d:sonar.log.level="TRACE" `
